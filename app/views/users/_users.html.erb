@@ -1,0 +1,27 @@
+<table>
+  <thead>
+  <tr>
+    <th>Author</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.username %></td>
+      <td><%= link_to 'Show', article_path(user) %></td>
+      <td><%= link_to 'Edit', edit_article_path(user) %></td>
+      <td>
+        <%= button_to 'Delete', article_path(user),method: :delete%>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<p>
+  <%= link_to 'home', root_path %>
+</p>
