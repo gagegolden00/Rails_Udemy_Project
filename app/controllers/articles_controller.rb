@@ -19,8 +19,8 @@ class ArticlesController < ApplicationController
     @article = Article.new(whitelist_params)
     @article.user = User.first
     if @article.save
-      flash[:notice] = "Article was created successfully."
-      redirect_to @article
+      redirect_to @article, notice: "Article was created successfully."
+    
     else
       render 'new'
     end
@@ -28,8 +28,8 @@ class ArticlesController < ApplicationController
 
   def update
     if @article.update(whitelist_params)
-      flash[:notice] = "Article was updated successfully."
-      redirect_to @article
+      redirect_to @article, notice: "Article was updated successfully."
+    
     else
       render 'edit'
     end
