@@ -3,5 +3,20 @@ class UsersController < ApplicationController
   def new
     @user = User.new()
   end
+  def create
+    @user = User.new(whitelist_params)
+    if @user.save
+      redirect_to articles_path, notice: "sign up successful #{@user.username}"
+    
+    else
+      render 'new'
+    end
+  end
+  
+  private
+  def whitelist_params
+  params.require(:user).permit(:username, :email, :password)
+  end
+  
 end
 
