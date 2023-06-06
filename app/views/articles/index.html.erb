@@ -1,5 +1,8 @@
+
+
 <%= render 'articles/article' %>
 
-<p>
-  <%= link_to 'home', root_path %>
-</p>
+
+<div class="flickr_pagination">
+  <%= will_paginate @article, :container => false %>
+</div>

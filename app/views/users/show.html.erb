@@ -1,4 +1,4 @@
 <h1><%= @user.username %>'s Profile</h1>
 
-
+<%= link_to 'edit your profile', edit_user_path(@user) %>
 <%= link_to 'Return to articles listing', articles_path %>

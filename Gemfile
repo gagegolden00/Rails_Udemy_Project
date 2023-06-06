@@ -56,3 +56,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # debugger
 gem 'pry'
+
+# pagination gem
+gem 'will_paginate', '~> 3.1.0'
